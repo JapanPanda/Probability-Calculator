@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="example.firstprogram.InAGameProbability"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="320x50"
+        ads:adUnitId="ca-app-pub-1651355529246335/5188286381"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="16dp"
+        ads:layout_constraintRight_toRightOf="parent">
+    </com.google.android.gms.ads.AdView>
+
+    <TextView
+        android:id="@+id/Probability"
+        android:layout_width="0dp"
+        android:layout_height="23dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Probability: "
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/CopiesLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Copies Left:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/Probability" />
+
+    <TextView
+        android:id="@+id/CurrentTurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Current Turn: "
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/CardsLeft" />
+
+    <TextView
+        android:id="@+id/DesiredTurns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Turns until desired turn:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/CurrentTurn" />
+
+    <EditText
+        android:id="@+id/NewTurn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Pick a new turn"
+        android:inputType="number"
+        android:maxLength="9"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DesiredTurns" />
+
+    <Button
+        android:id="@+id/Apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="showApply"
+        android:text="Apply"
+        app:layout_constraintBaseline_toBaselineOf="@+id/NewTurn"
+        app:layout_constraintLeft_toRightOf="@+id/NewTurn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.557" />
+
+    <Button
+        android:id="@+id/CopyButton"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="35dp"
+        android:onClick="drawCopy"
+        android:text="Copy"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NewTurn"
+        app:layout_constraintVertical_bias="0.288"
+        app:layout_constraintBottom_toTopOf="@+id/adView" />
+
+    <Button
+        android:id="@+id/NotACopyButton"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginRight="16dp"
+        android:onClick="didnotdrawCopy"
+        android:text="Not a Copy"
+        app:layout_constraintBaseline_toBaselineOf="@+id/CopyButton"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/Help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:onClick="showHelp"
+        android:text="Help"
+        app:layout_constraintBaseline_toBaselineOf="@+id/CurrentTurn"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/CardsLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cards Left:"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/CopiesLeft" />
+
+</android.support.constraint.ConstraintLayout>
